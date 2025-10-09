@@ -91,7 +91,7 @@ nav.menu a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%; /* Dropdown appears just below the parent link */
+  top: 100%; /* dropdown directly below parent */
   left: 0;
   background-color: #333;
   color: white;
@@ -99,7 +99,6 @@ nav.menu a:hover {
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   z-index: 1000;
-  transition: all 0.3s ease;
 }
 
 .dropdown-content a {
@@ -233,14 +232,14 @@ ul, ol {
   }
 
   .dropdown-content {
-    position: static;
+    position: relative; /* stay within menu flow */
     width: 100%;
     border-radius: 0;
     box-shadow: none;
-    display: none; /* Hide by default */
+    display: none;
   }
 
   .dropdown.open .dropdown-content {
-    display: block; /* Show on click */
+    display: block; /* toggled by JS */
   }
 }
