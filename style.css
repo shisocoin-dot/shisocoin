@@ -81,6 +81,7 @@ nav.menu a:hover {
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 999;
 }
 
 .dropdown > a {
@@ -90,13 +91,14 @@ nav.menu a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 100%; /* Dropdown appears just below the parent link */
   left: 0;
   background-color: #333;
+  color: white;
   min-width: 180px;
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  z-index: 200;
+  z-index: 1000;
   transition: all 0.3s ease;
 }
 
@@ -235,9 +237,10 @@ ul, ol {
     width: 100%;
     border-radius: 0;
     box-shadow: none;
+    display: none; /* Hide by default */
   }
 
   .dropdown.open .dropdown-content {
-    display: block;
+    display: block; /* Show on click */
   }
 }
