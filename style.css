@@ -60,6 +60,10 @@ nav.menu {
   position: sticky;
   top: 0;
   z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav.menu a {
@@ -71,6 +75,44 @@ nav.menu a {
 
 nav.menu a:hover {
   color: #2575fc;
+}
+
+/* ---------- Dropdown ---------- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown a {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 200;
+  border-radius: 6px;
+  top: 40px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-weight: normal;
+}
+
+.dropdown-content a:hover {
+  background-color: #2575fc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* ---------- Sections ---------- */
@@ -173,4 +215,27 @@ iframe {
 ul, ol {
   margin-left: 20px;
   margin-bottom: 15px;
+}
+
+/* ---------- Responsive Dropdown for Mobile ---------- */
+@media (max-width: 768px) {
+  nav.menu {
+    flex-direction: column;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  nav.menu a, .dropdown a {
+    margin: 10px 0;
+  }
 }
