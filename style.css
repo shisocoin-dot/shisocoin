@@ -11,6 +11,7 @@ body {
 
 a {
   transition: 0.3s;
+  text-decoration: none;
 }
 
 /* ---------- Header ---------- */
@@ -43,7 +44,6 @@ header p {
   background: #2575fc;
   color: white;
   border-radius: 6px;
-  text-decoration: none;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(37, 117, 252, 0.4);
 }
@@ -59,7 +59,7 @@ nav.menu {
   padding: 15px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,8 +69,8 @@ nav.menu {
 nav.menu a {
   color: white;
   margin: 0 10px;
-  text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 nav.menu a:hover {
@@ -90,18 +90,19 @@ nav.menu a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 40px;
+  left: 0;
   background-color: #333;
   min-width: 180px;
+  border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   z-index: 200;
-  border-radius: 6px;
-  top: 40px;
+  transition: all 0.3s ease;
 }
 
 .dropdown-content a {
   color: white;
   padding: 12px 16px;
-  text-decoration: none;
   display: block;
   text-align: left;
   font-weight: normal;
@@ -171,7 +172,6 @@ section h2 {
 .back-btn {
   display: inline-block;
   margin-top: 20px;
-  text-decoration: none;
   color: #2575fc;
   font-weight: bold;
 }
