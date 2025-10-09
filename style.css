@@ -87,11 +87,39 @@ section h2 {
   color: #2575fc;
 }
 
-/* ---------- Roadmap ---------- */
-.roadmap {
-  text-align: left;
-  display: inline-block;
-  margin: 20px auto;
+/* ---------- Roadmap Timeline ---------- */
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 40px;
+  border-left: 3px solid #2575fc;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #2575fc;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.timeline-item h3 {
+  margin: 0 0 5px;
+  color: #6a11cb;
+}
+
+.timeline-item p {
+  margin: 0;
 }
 
 /* ---------- Back Button ---------- */
