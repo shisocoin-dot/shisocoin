@@ -83,7 +83,7 @@ nav.menu a:hover {
   display: inline-block;
 }
 
-.dropdown a {
+.dropdown > a {
   cursor: pointer;
 }
 
@@ -111,8 +111,11 @@ nav.menu a:hover {
   background-color: #2575fc;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+/* Desktop hover */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 }
 
 /* ---------- Sections ---------- */
@@ -217,15 +220,18 @@ ul, ol {
   margin-bottom: 15px;
 }
 
-/* ---------- Responsive Dropdown for Mobile ---------- */
+/* ---------- Mobile Responsive Dropdown ---------- */
 @media (max-width: 768px) {
   nav.menu {
     flex-direction: column;
   }
 
+  nav.menu a, .dropdown > a {
+    margin: 10px 0;
+  }
+
   .dropdown-content {
     position: static;
-    display: none;
     width: 100%;
     border-radius: 0;
     box-shadow: none;
@@ -233,9 +239,5 @@ ul, ol {
 
   .dropdown.open .dropdown-content {
     display: block;
-  }
-
-  nav.menu a, .dropdown a {
-    margin: 10px 0;
   }
 }
